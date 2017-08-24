@@ -1,10 +1,11 @@
 (ns exercise3)
 
 (defn fibonacci
-  "Does some math calculation."
+  "Returns fibonacci number."
   [x]
-  (- 10 (* 2 x)))
-
-
-
-
+  (nth 
+    (take (+ x 1) 
+      (map first (iterate (fn [[a b]] [b (+ a b)]) [0 1]))
+    ) x
+  )
+)
